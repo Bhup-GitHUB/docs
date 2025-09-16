@@ -62,6 +62,7 @@ html[data-theme="dark"] {
   --ifm-badge-background-color: #f88e34;
   --card-color: rgba(17, 24, 39);
   --ifm-card-shadow-color: rgba(255, 255, 255, 0.2);
+  --quickstart-card-border: transparent; /* No border for quickstart cards in dark mode */
 }
 
 html[data-theme="light"] {
@@ -77,6 +78,7 @@ html[data-theme="light"] {
 
   --card-color: rgba(239, 246, 255);
   --ifm-card-shadow-color: rgba(0, 0, 0, 0.2); /* Dark shadow for light theme */
+  --quickstart-card-border: #e5e7eb; /* Light grey border for quickstart cards */
 }
 
 @font-face {

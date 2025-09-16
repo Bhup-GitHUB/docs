@@ -20,7 +20,7 @@ const IconWrapper = ({icon, bg}) => (
       alignItems: "center",
       justifyContent: "center",
       borderRadius: "50%",
-      backgroundColor: bg || "#f3f4f6",
+      backgroundColor: bg || "var(--ifm-color-emphasis-200)",
       boxShadow: "0 3px 6px rgba(0,0,0,0.1)",
       transition: "transform 0.2s ease",
     }}
@@ -100,11 +100,7 @@ export default function QuickstartFilter({defaultLanguage = null}) {
             style={{
               ...buttonCard,
               border:
-                language === lang.name ? "2px solid #f97316" : "2px solid #ddd",
-              boxShadow:
-                language === lang.name
-                  ? "0 3px 8px rgba(249, 115, 22, 0.3)"
-                  : "none",
+                language === lang.name ? "2px solid #f97316" : "2px solid var(--quickstart-card-border)",
             }}
           >
             <IconWrapper icon={lang.icon} bg={lang.bg} />
@@ -125,11 +121,7 @@ export default function QuickstartFilter({defaultLanguage = null}) {
             style={{
               ...buttonCard,
               border:
-                server === srv.name ? "2px solid #f97316" : "2px solid #ddd",
-              boxShadow:
-                server === srv.name
-                  ? "0 3px 8px rgba(249, 115, 22, 0.3)"
-                  : "none",
+                server === srv.name ? "2px solid #f97316" : "2px solid var(--quickstart-card-border)",
             }}
           >
             <IconWrapper icon={srv.icon} bg={srv.bg} />
@@ -151,7 +143,7 @@ export default function QuickstartFilter({defaultLanguage = null}) {
                   <h3 style={{margin: "0 0 0.5rem 0", fontSize: "1.2rem"}}>
                     {app.title}
                   </h3>
-                  <p style={{color: "#555", fontSize: "0.95rem"}}>
+                  <p style={{color: "var(--ifm-color-emphasis-600)", fontSize: "0.95rem"}}>
                     {app.description}
                   </p>
                   <Link to={app.link} style={linkStyle}>
@@ -160,7 +152,7 @@ export default function QuickstartFilter({defaultLanguage = null}) {
                 </div>
               ))
             ) : (
-              <p>No quickstarts available for this selection.</p>
+              <p style={{color: "var(--ifm-color)"}}>No quickstarts available for this selection.</p>
             )}
           </div>
         </>
@@ -175,6 +167,7 @@ const headingStyle = {
   marginLeft: "1rem",
   fontSize: "1.4rem",
   fontWeight: "600",
+  color: "var(--ifm-color)",
 };
 
 const serverContainer = {
@@ -196,13 +189,14 @@ const stepContainer = {
 };
 
 const buttonCard = {
-  border: "2px solid #ddd",
+  border: "2px solid var(--quickstart-card-border)",
   borderRadius: "12px",
   padding: "1rem 2rem",
   cursor: "pointer",
-  background: "#fff",
+  background: "var(--ifm-card-background-color)",
   transition: "all 0.2s ease",
   textAlign: "center",
+  color: "var(--ifm-color)",
 };
 
 const gridContainer = {
@@ -213,11 +207,12 @@ const gridContainer = {
 };
 
 const cardStyle = {
-  border: "1px solid #eee",
+  border: "1px solid var(--ifm-color-emphasis-300)",
   borderRadius: "12px",
   padding: "1rem",
-  background: "#fff",
-  boxShadow: "0 2px 6px rgba(0, 0, 0, 0.08)",
+  background: "var(--ifm-card-background-color)",
+  boxShadow: "0 2px 6px var(--ifm-card-shadow-color)",
+  color: "var(--ifm-color)",
 };
 
 const linkStyle = {
